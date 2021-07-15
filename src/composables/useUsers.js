@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import useToasts from "@/composables/useToasts";
 import usersService from "@/services/UsersService";
 
@@ -50,8 +50,8 @@ export default function useUsers() {
   }
 
   return {
-    users,
-    loading,
+    users: computed(() => users.value),
+    loading: computed(() => loading.value),
     fetchUsers,
     saveUser,
     deleteUser,

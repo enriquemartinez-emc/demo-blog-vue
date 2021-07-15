@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import postsService from "@/services/PostsService";
 
 export default function usePosts() {
@@ -19,8 +19,8 @@ export default function usePosts() {
   }
 
   return {
-    posts,
-    loading,
+    posts: computed(() => posts.value),
+    loading: computed(() => loading.value),
     error,
     fetchPosts,
   };
