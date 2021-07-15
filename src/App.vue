@@ -3,6 +3,7 @@
   <main class="container p-input-filled">
     <router-view />
   </main>
+
   <Toast />
 </template>
 
@@ -15,6 +16,10 @@ export default {
 </script>
 
 <style scoped>
+.app {
+  height: 100%;
+  background-color: lightgray;
+}
 .container {
   padding-top: 20px;
 }
